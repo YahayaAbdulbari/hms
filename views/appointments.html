@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments | MediCare HMS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../bootstrap5/css/all.css">
+  <link rel="stylesheet" href="../css/css/styles.css">
+  <link rel="stylesheet" href="../bootstrap5/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Navbar (Reused from Dashboard) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">MediCare HMS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="patients.html">Patients</a></li>
+          <li class="nav-item"><a class="nav-link active" href="appointments.html">Appointments</a></li>
+          <li class="nav-item"><a class="nav-link" href="billing.html">Billing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Appointments Content -->
+  <div class="container-fluid py-4">
+    <div class="d-flex justify-content-between mb-4">
+      <h2>Appointment Management</h2>
+      <a href="add-apointment.html">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAppointmentModal">
+          + New Appointment
+        </button>
+      </a>
+    </div>
+
+    <!-- Calendar View (Placeholder) -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Calendar</h5>
+        <div class="text-center py-4 bg-light rounded">
+          <p class="text-muted">Interactive calendar would integrate here (e.g., FullCalendar.js).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Appointments Table -->
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Date & Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#A1001</td>
+                <td>John Doe</td>
+                <td>Dr. Smith</td>
+                <td>2023-10-15 10:00 AM</td>
+                <td><span class="badge bg-success">Confirmed</span></td>
+                <td>
+                  <a href="#" class="btn btn-sm btn-info">View</a>
+                  <a href="#" class="btn btn-sm btn-warning">Reschedule</a>
+                </td>
+              </tr>
+              <tr>
+                <td>#A1002</td>
+                <td>Jane Smith</td>
+                <td>Dr. Johnson</td>
+                <td>2023-10-16 02:30 PM</td>
+                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                <td>
+                  <a href="#" class="btn btn-sm btn-info">View</a>
+                  <a href="#" class="btn btn-sm btn-danger">Cancel</a>
+                </td>
+              </tr>
+              <!-- More rows... -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Appointment Modal -->
+  <div class="modal fade" id="addAppointmentModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Schedule New Appointment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Patient</label>
+                <select class="form-select" required>
+                  <option value="">Select Patient</option>
+                  <option>John Doe</option>
+                  <option>Jane Smith</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Doctor</label>
+                <select class="form-select" required>
+                  <option value="">Select Doctor</option>
+                  <option>Dr. Smith</option>
+                  <option>Dr. Johnson</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Date</label>
+                <input type="date" class="form-control" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Time</label>
+                <input type="time" class="form-control" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Notes</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Schedule</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../bootstrap5/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

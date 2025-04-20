@@ -1,0 +1,9 @@
+hospital-management-system/
+├── index.html           (Home/Landing Page)
+├── login.html           (Login Page)
+├── dashboard.html       (Admin/Doctor Dashboard)
+├── patients.html        (Patient Management)
+├── appointments.html    (Appointment Scheduling)
+├── billing.html         (Billing & Payments)
+└── css/
+    └── style.css        (Custom CSS overrides)
